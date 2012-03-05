@@ -38,22 +38,18 @@ bootstrap:
 	#TODO set up uglify
 	#uglifyjs -nc bootstrap-10gen/js/bootstrap.js > bootstrap-10gen/js/bootstrap.min.js
 
-#
-# MAKE FOR GH-PAGES 4 FAT & MDO ONLY (O_O  )
-#
+#gh-pages: docs
+	#rm -f ../bootstrap-gh-pages/assets/bootstrap.zip
+	#node docs/build production
+	#cp -r docs/* ../bootstrap-gh-pages
 
-gh-pages: docs
-	rm -f ../bootstrap-gh-pages/assets/bootstrap.zip
-	node docs/build production
-	cp -r docs/* ../bootstrap-gh-pages
-
-#
-# WATCH LESS FILES
-#
-
-watch:
-	echo "Watching less files..."; \
-	watchr -e "watch('less/.*\.less') { system 'make' }"
+# #
+# # WATCH LESS FILES
+# #
+# 
+# watch:
+# 	echo "Watching less files..."; \
+# 	watchr -e "watch('less/.*\.less') { system 'make' }"
 
 
 .PHONY: dist docs watch gh-pages
