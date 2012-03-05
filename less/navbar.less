@@ -7,7 +7,10 @@
 
 .navbar {
   overflow: visible;
-  margin-bottom: @baseLineHeight;
+  //margin-bottom: @baseLineHeight;
+}
+.navbar-sub{
+
 }
 
 // Gradient is applied to it's own element because overflow visible is not honored by IE when filter is present
@@ -70,6 +73,7 @@
     margin-bottom: 0;
     line-height: 40px;
     color: @navbarText;
+    font-weight: @navbarTextWeight;
     a:hover {
       color: @white;
       background-color: transparent;
@@ -196,7 +200,7 @@
   float: none;
   padding: 10px 10px 11px;
   line-height: 19px;
-  color: @navbarLinkColor;
+  color: @navbarLinkColor; font-weight: @navbarTextWeight;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 }
@@ -204,6 +208,7 @@
 .navbar .nav > li > a:hover {
   background-color: @navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover from .active
   color: @navbarLinkColorHover;
+  font-weight: @navbarTextWeight;
   text-decoration: none;
 }
 
@@ -212,14 +217,15 @@
 .navbar .nav .active > a:hover {
   color: @navbarLinkColorHover;
   text-decoration: none;
-  background-color: @navbarBackground;
+  background-color: @navbarActiveBackground;
+  .border-radii(4px, 0px, 0px, 4px);
 }
 
 // Dividers (basically a vertical hr)
 .navbar .divider-vertical {
   height: @navbarHeight;
   width: 1px;
-  margin: 0 9px;
+  margin: 0 0px;
   overflow: hidden;
   background-color: @navbarBackground;
   border-right: 1px solid @navbarBackgroundHighlight;

@@ -8,21 +8,23 @@
 // --------------------------------------------------
 
 //10gen Colors
-@blue_10gen        #1df595
-@blue2_10gen       #0076C0
-@blue3_10gen       #3399CC
-@blue4_10gen       #00a49E
-@red_10gen         #DD4F00
-@yellow_10gen      #EE9c00
-@green_10gen       #6CB33F
-@lightblue_10gen   #BCDAED
-@lighterblue_10gen #E8F3F9
-@tan_10gen         #F9DCA0
-@lightgreen_10gen  #BBDB88
-@black_10gen       #212221
-@gray_10gen        #625f5e
-@lightgray_10gen   #B2B2B2
-@white_10gen       #EEEEEE
+//@deepblue_10gen:      #2654A0;
+//@deeperblue_10gen:    #1F4896;
+@blue_10gen:          #1d4595;
+@blue2_10gen:         #0076C0;
+@blue3_10gen:         #3399CC;
+@blue4_10gen:         #00a49E;
+@red_10gen:           #DD4F00;
+@yellow_10gen:        #EE9c00;
+@green_10gen:         #6CB33F;
+@lightblue_10gen:     #BCDAED;
+@lighterblue_10gen:   #E8F3F9;
+@tan_10gen:           #F9DCA0;
+@lightgreen_10gen:    #BBDB88;
+@black_10gen:         #212221;
+@gray_10gen:          #625f5e;
+@lightgray_10gen:     #B2B2B2;
+@white_10gen:         #EEEEEE;
 
 
 // Links
@@ -50,7 +52,7 @@
 
 // Typography
 @baseFontSize:          13px;
-@baseFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@baseFontFamily:        "PT Sans", Helvetica, Arial, sans-serif;
 @baseLineHeight:        18px;
 @textColor:             @grayDark;
 
@@ -84,13 +86,16 @@
 
 // Navbar
 @navbarHeight:                    40px;
-@navbarBackground:                @grayDarker;
-@navbarBackgroundHighlight:       @grayDark;
+@navbarBackground:                darken(@blue_10gen, 10%);
+@navbarBackgroundHighlight:       @blue_10gen;
 @navbarLinkBackgroundHover:       transparent;
 
-@navbarText:                      @grayLight;
-@navbarLinkColor:                 @grayLight;
+@navbarText:                      @white;
+@navbarLinkColor:                 @white;
 @navbarLinkColorHover:            @white;
+@navbarTextWeight:                bold;
+@navbarActiveBackground:          @blue2_10gen;
+
 
 // Form states and alerts
 @warningText:             #c09853;

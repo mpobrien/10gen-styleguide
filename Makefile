@@ -9,17 +9,16 @@ WATCHR ?= `which watchr`
 # BUILD DOCS
 #
 
-#docs: bootstrap
+docs: bootstrap
 	#rm docs/assets/bootstrap.zip
-	#zip -r docs/assets/bootstrap.zip bootstrap
 	#rm -r bootstrap
-	#lessc ${BOOTSTRAP_LESS} > ${BOOTSTRAP}
-	#lessc ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
+	lessc ${BOOTSTRAP_LESS} > ${BOOTSTRAP}
+	lessc ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
 	#node docs/build
-	#cp img/* docs/assets/img/
-	#cp js/*.js docs/assets/js/
-	#cp js/tests/vendor/jquery.js docs/assets/js/
-	#cp js/tests/vendor/jquery.js docs/assets/js/
+	cp img/* docs/assets/img/
+	cp js/*.js docs/assets/js/
+	cp js/tests/vendor/jquery.js docs/assets/js/
+	cp js/tests/vendor/jquery.js docs/assets/js/
 
 #
 # BUILD SIMPLE BOOTSTRAP DIRECTORY
