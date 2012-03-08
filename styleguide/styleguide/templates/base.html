@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+        <title>10gen Style Guide</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="static/css/bootstrap.css" rel="stylesheet">
+
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <script type="text/javascript" src="static/js/jquery.js"></bootstrap-dropdown>
+        <script type="text/javascript" src="static/js/prettify.js"></script>
+        <script type="text/javascript" src="static/js/bootstrap-transition.js"></script>
+        <script type="text/javascript" src="static/js/bootstrap-dropdown.js"></script>
+        <script type="text/javascript" src="static/js/bootstrap-carousel.js"></script>
+        <script type="text/javascript" src="static/js/bootstrap-scrollspy.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#myCarousel').carousel({interval:2000});
+                $('#subnav_10gen').scrollspy();
+            });
+        </script>
+        <style type="text/css">
+            section{
+                padding-top:60px;
+            }
+        </style>
+        {% block head %}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% block brandheader %}
+        <div class="container" style="height:40px">
+            <div class="row">
+                <div class="span4">
+                    <img src="./static/img/10gen_logo.png" alt="" height="100" style="height:40px;float:left;"/>
+                    <!--<div class="brand" style="float:left">the MongoDB company</div>-->
+                    <img src="./static/img/leaf_logo.png" alt="" height="100" style="height:40px;float:left" />
+                </div>
+                <div class="span6" style="text-align:right;padding-top:15px;">
+                    <ul class="secondary-nav">
+                        <li><a href="#">mongoDB.org</a></li>
+                        <li><span class="vertbar"></span>
+                        <li><a href="#">blog.mongoDB.org</a></li>
+                        <li><span class="vertbar"></span>
+                        <li><a href="#">blog.10gen.com</a></li>
+                    </ul>
+                </div>
+                <div class="span2" style="padding-top:10px">
+                    <div class="btn btn-primary">
+                        <span>Log In</span>
+                        <span class="vertbar"></span>
+                        <span class="caret"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+        {% block navbar %}
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <div class="nav">
+                            <ul class="nav">
+                                {% for navurl, navitem in topnav.iteritems() %}
+                                    {% if topnav_active == navurl %}
+                                        <li class="active">
+                                    {% else %}
+                                        <li>
+                                    {% endif %}
+                                        <a href="/{{navurl}}">{{navitem['name']}}</a>
+                                    </li>
+                                    <li class="divider-vertical"></li> 
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        {% block subnavbar %}
+            {% if subnav %}
+                <ul id="subnav_10gen" class="nav nav-pills tengen-nav" style="width:100%">
+                    {% for subnavitem in subnav %}
+                        {% if loop.first %}
+                            <li class="active">
+                        {% else %}
+                            <li>
+                        {% endif %}
+                            <a href="#{{subnavitem|slugify}}">{{subnavitem}}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endblock %}
+        <div class="container">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
