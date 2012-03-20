@@ -13,6 +13,24 @@
   position: relative;
 }
 
+.carousel-tri-container{
+    border:1px solid @lightblue_10gen;
+    .border-radius(5px);
+    background-color: @lighterblue_10gen;
+    //padding-bottom: 20px;
+    width:700px;
+}
+
+.carousel-tri-item{
+    border:1px solid @lightblue_10gen;
+    .border-radius(5px);
+    background-color: @white;
+    width:205px;
+    height:154px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
 .carousel {
 
   .item {
@@ -69,8 +87,8 @@
   position: absolute;
   top: 40%;
   left: 15px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   margin-top: -20px;
   font-size: 60px;
   font-weight: 100;
@@ -78,11 +96,12 @@
   color: @white;
   text-align: center;
   background: @grayDarker;
-  border: 3px solid @white;
+  //border: 3px solid @white;
   .border-radius(23px);
   .opacity(50);
+  background:url('/static/img/left_arrow.png');
 
-  // we can't have this transition here
+  // we cant have this transition here
   // because webkit cancels the carousel
   // animation if you trip this while
   // in the middle of another animation
@@ -93,7 +112,12 @@
   &.right {
     left: auto;
     right: 15px;
+    background:url('/static/img/right_arrow.png');
   }
+
+  //&.left {
+    //background:url('/static/img/left_arrow.png');
+  //}
 
   // Hover state
   &:hover {
